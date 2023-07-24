@@ -1,19 +1,15 @@
-function taskFirst() {
-  const message = "This is a constant message.";
-  console.log(message);
+export function taskFirst() {
+  var task = 'I prefer const when I can.';
+  return task;
 }
 
-function taskNext() {
-  let count = 0; 
-  console.log("Count:", count);
-
-  count++; 
-  console.log("Count after increment:", count);
-  
-  count = 10;
-  console.log("Count reassigned:", count);
+export function getLast() {
+  return ' is okay';
 }
 
-taskFirst();
-taskNext();
+export function taskNext() {
+  var combination = 'But sometimes let';
+  combination += getLast();
 
+  return combination;
+}
