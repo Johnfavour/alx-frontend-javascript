@@ -1,8 +1,10 @@
-const employeesList = createEmployeesObject("engineering", ["John Doe", "Guillaume Salva"]);
-const reportObject = createReportObject(employeesList);
+export default function* createIteratorObject(report) {
+  const departments = report.allEmployees;
 
-const iterator = createIteratorObject(reportObject);
-
-console.log(iterator.next().value);
-console.log(iterator.next().value); 
-console.log(iterator.next().done);   
+  for (const department in departments) {
+    const employees = departments[department];
+    for (const employee of employees) {
+      yield employee;
+    }
+  }
+}
