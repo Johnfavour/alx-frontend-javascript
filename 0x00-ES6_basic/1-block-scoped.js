@@ -1,4 +1,4 @@
-function taskBlock() {
+export default function taskBlock() {
   let x = 10;
   let y = 5;  
 
@@ -10,4 +10,3 @@ function taskBlock() {
   console.log("Outside the block - y:", y);
 }
 taskBlock();
-
