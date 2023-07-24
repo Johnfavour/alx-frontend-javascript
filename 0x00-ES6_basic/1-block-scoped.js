@@ -1,12 +1,11 @@
-export default function taskBlock() {
-  let x = 10;
-  let y = 5;  
+export default function taskBlock(trueOrFalse) {
+  const task = false;
+  const task2 = true;
 
-  if (x > y) {
-    let z = x + y;
-    console.log("Inside the block - z:", z);
+  if (trueOrFalse) {
+    const task = true;
+    const task2 = false;
   }
-  console.log("Outside the block - x:", x);
-  console.log("Outside the block - y:", y);
+
+  return [task, task2];
 }
-taskBlock();
