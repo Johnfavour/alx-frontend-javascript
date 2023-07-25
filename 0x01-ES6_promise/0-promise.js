@@ -1,15 +1,10 @@
-function getResponseFromAPI() {
-	  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-	          const responseData = { message: 'Hello from the API!' };
-	    resolve(responseData);
-	     }, 2000);
+export default function getResponseFromAPI() {
+  const success = true;
+  return new Promise((resolve, reject) => {
+    if (success) {
+      resolve();
+    } else {
+      reject();
+    }
   });
 }
-getResponseFromAPI()
-  .then(responseData => {
-	    console.log(responseData);
-  })
-  .catch(error => {
-	   console.error('Error:', error.message);
-  });
