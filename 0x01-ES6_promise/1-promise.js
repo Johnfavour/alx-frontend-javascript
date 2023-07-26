@@ -1,9 +1,13 @@
 function getFullResponseFromAPI(boolean) {
   return new Promise((resolve, reject) => {
-    if (boolean) {
-      resolve({ status: 200, body: 'Success' });
+    const arg = {
+	    status: 200, 
+	    body: 'Success' 
+    };
+    if (boolean === true) {
+	    resolve(arg);
     } else {
-      reject(new Error('The fake API is not working currently'));
+      reject(Error('The fake API is not working currently'));
     }
   });
 }
