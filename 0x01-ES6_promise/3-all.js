@@ -1,11 +1,8 @@
-export function uploadPhoto() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve({ body: 'Uploaded photo' }), 2000);
-  });
-}
-
-export function createUser() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve({ firstName: 'John', lastName: 'Doe' }), 1500);
-  });
+import { uploadPhoto, createUser } from './utils';
+export default function handleProfileSignup() {
+  return Promise.all([uploadPhoto(), createUser()])
+    .then((value) => {
+      console.log(`${value[0].body} ${value[1].firstName} ${value[1].lastName}`);
+    })
+    .catch(() => console.log('Signup system offline'));
 }
